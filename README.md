@@ -22,3 +22,16 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Vue.js preset setup
+* Manually select features
+  * Babel
+  * Router
+  * Vuex
+  * Css pre-processors
+  * Linter / Formatter
+* use history mode for router? Y
+* SCSS/SASS
+* ESLint with error prevention only
+* Lint on save
+* In dedication config files
