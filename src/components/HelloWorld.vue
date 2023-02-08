@@ -1,8 +1,9 @@
 <template>
   <div class="hello">
-    <button @click.once="updateScore(1)">클락하세요</button>
+    <button @click.once="updateScore(2)">클락하세요</button>
     <input type="text" @keyup.enter="keyup">
     <h1>score: {{score}}</h1>
+    <h1>today: {{today}}</h1>
   </div>
 </template>
 
@@ -15,6 +16,12 @@ export default {
     },
     keyup() {
       console.log('enter');
+    }
+  },
+  computed: {
+    today() {
+      // return new Date().getDate();
+      return this.score + 1;
     }
   },
   data() {        // this.
