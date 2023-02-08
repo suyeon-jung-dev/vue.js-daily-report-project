@@ -1,9 +1,24 @@
 <template>
   <div class="hello">
-    <button @click.once="updateScore(2)">클락하세요</button>
-    <input type="text" @keyup.enter="keyup">
-    <h1>score: {{score}}</h1>
-    <h1>today: {{today}}</h1>
+
+    <!-- input text -->
+    <input type="text" v-model="msg" placeholder="입력하세요.">
+
+    <!--  input checkbox  -->
+    <input type="checkbox" v-model="seen">
+
+    <!-- input radio -->
+    <input type="radio" v-model="age" value="30">
+    <input type="radio" v-model="age" value="20">
+    <input type="radio" v-model="age" value="10">
+    <p>{{age}}</p>
+
+    <!-- select -->
+    <select v-model="age">
+      <option value="30">30</option>
+      <option value="20">20</option>
+      <option value="10">10</option>
+    </select>
   </div>
 </template>
 
