@@ -3,7 +3,10 @@
     <h1>{{msg}}</h1>
 
     <!--  4. NewComponent.vue 컴포넌트를 태그처럼 삽입 가능하다. kebab-case 로 등록. -->
-    <new-component></new-component>
+    <new-component
+      :msg="msg"
+    >
+    </new-component>
 
     <!-- input text -->
     <input type="text" v-model="msg" placeholder="입력하세요.">
