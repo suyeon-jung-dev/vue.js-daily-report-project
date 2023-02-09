@@ -1,24 +1,41 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+
+import Intro from '@/components/Intro'
+import Day from '@/components/Day'
+import Calendar from '@/components/Calendar'
+import Setting from '@/components/Setting'
+import About from '@/components/About'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'intro',
+    component: Intro
+  },
+  {
+    path: '/day/:date',   // 파라미터의 시작은 : 콜론으로 설정
+    name: 'day',
+    component: Day
+  },
+  {
+    path: '/calendar',
+    name: 'calendar',
+    component: Calendar
+  },
+  {
+    path: '/setting',
+    name: 'setting',
+    component: Setting
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: About
   }
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(process.env.BASE_URL),    // 기본적으로 처음에 설정한 history 모드 사용
   routes
 })
 
