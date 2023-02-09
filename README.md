@@ -27,6 +27,69 @@
   * 소개 about
   * 서비스 소개를 보여준다
 
+## xeicon 대신 font-awesome 라이브러리 추가
+공식문서: https://fontawesome.com/docs/web/use-with/vue/#you-re-ready-to-add-icons
+1. add SVG Core
+```
+yarn add @fortawesome/fontawesome-svg-core
+```
+2. Add icon packages
+```
+# Free icons styles
+yarn add @fortawesome/free-solid-svg-icons
+yarn add @fortawesome/free-regular-svg-icons
+yarn add @fortawesome/free-brands-svg-icons
+```
+
+3. for Vue 3.x
+```
+yarn add @fortawesome/vue-fontawesome@latest-3
+```
+4. 라이브러리 import
+
+공식문서: https://fontawesome.com/docs/web/use-with/vue/add-icons
+
+```
+/* Set up using Vue 3 */
+import { createApp } from 'vue'
+import App from './App.vue'
+
+/* import the fontawesome core */
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+/* import font awesome icon component */
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+/* import specific icons */
+import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+
+/* add icons to the library */
+library.add(faUserSecret)
+
+createApp(App)
+.component('font-awesome-icon', FontAwesomeIcon)
+.mount('#app')
+```
+5. 라이브러리 추가 테스트 방법
+
+https://fontawesome.com/docs/web/use-with/vue/add-icons#call-the-icons
+```
+<template>
+  <div id="app">
+
+    <!-- Add the style and icon you want using the String format -->
+    <font-awesome-icon icon="fa-solid fa-user-secret" />
+
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'App'
+  }
+</script>
+```
+
 ## Project setup
 ```
 yarn install
