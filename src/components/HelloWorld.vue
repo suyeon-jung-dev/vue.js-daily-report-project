@@ -49,6 +49,36 @@ export default {
           '<strong>Hello</strong> world!!',
       seen : false
     }
+  },
+  // 뷰 컴포넌트 인스턴스의 life-cycle
+  //https://v3-docs.vuejs-korea.org/guide/essentials/lifecycle.html#lifecycle-diagram
+
+  beforeCreate() {
+    console.log('beforeCreate');
+  },
+  created() {
+    console.log('created');
+  },
+  beforeMount() {
+    console.log('beforeMount');
+  },
+  mounted() {
+    console.log('mounted');
+  },
+  beforeUpdate() {
+    console.log('beforeUpdate');
+  },
+  updated() {       // 수시로 데이터 변경시 업데이트
+    console.log('updated');
+  },
+  // beforeDestroy() {     // beforeDestroy 는 deprecated 됨. > beforeUnmount 를 사용하자.
+  //   console.log('beforeDestroy');
+  // },
+  beforeUnmount() {
+    console.log('beforeUnmount');
+  },
+  unmounted() {
+    console.log('unmounted');
   }
 }
 </script>
