@@ -1,5 +1,9 @@
 <template>
   <div class="hello">
+    <h1>{{msg}}</h1>
+
+    <!--  4. NewComponent.vue 컴포넌트를 태그처럼 삽입 가능하다. kebab-case 로 등록. -->
+    <new-component></new-component>
 
     <!-- input text -->
     <input type="text" v-model="msg" placeholder="입력하세요.">
@@ -23,8 +27,15 @@
 </template>
 
 <script>
+// 1. 컴포넌트 import
+import newComponent from '@/components/NewComponent';
 export default {
   name: 'HelloWorld',
+
+  // 2. components 에 camelCase 로 등록
+  components: {
+    newComponent
+  },
   methods: {
     updateScore(score) {
       this.score = score;   // 여기서 this 는 data 오브젝트를 말한다.
