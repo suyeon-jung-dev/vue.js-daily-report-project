@@ -1,18 +1,29 @@
 <template>
-  <div class="hello">
-    인트로
-    <font-awesome-icon icon="fa-solid fa-user-secret"></font-awesome-icon>
+  <div class="intro">
+    <div class="intro-inner">
+      <h1>Daily<br>Report</h1>
+      <router-link
+        class="button"
+        :to="todayUrl"
+      > <!-- 데이터와 바인딩 한다는 의미로 앞에 콜론( : ) 을 붙여준다. -->
+        START
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import moment from "moment";
+
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: "Intro",
-  components: {FontAwesomeIcon},
+  name: `Intro`,
   methods: {},
-  computed: {},
+  computed: {
+    todayUrl() {
+      let todayUrl = moment(new Date()).format('YYYY–MM-DD');
+      return `/day/${todayUrl}`;  // templaet literal 은 백틱으로 감싼다.
+    }
+  },
   data() {
     return {}
   },
