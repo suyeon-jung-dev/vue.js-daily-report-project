@@ -30,6 +30,47 @@
 ## Todo
 - [ ] composition api 의 ```<script setup>``` 버전으로 새 브랜치에 작업해보기
 
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Vue.js preset setup
+* Manually select features
+  * Babel
+  * Router
+  * Vuex
+  * Css pre-processors
+  * Linter / Formatter
+* use history mode for router? Y
+* SCSS/SASS
+* ESLint with error prevention only
+* Lint on save
+* In dedication config files
+
+## 추가 모듈
+- xeicon
+- moment
+
+
 ## xeicon 대신 font-awesome 라이브러리 추가
 공식문서: https://fontawesome.com/docs/web/use-with/vue/#you-re-ready-to-add-icons
 1. add SVG Core
@@ -93,38 +134,8 @@ https://fontawesome.com/docs/web/use-with/vue/add-icons#call-the-icons
 </script>
 ```
 
-## Project setup
-```
-yarn install
-```
 
-### Compiles and hot-reloads for development
+## 오늘 날짜를 가져오기 위한 날짜 패키지, moment 설치
 ```
-yarn serve
+yarn add moment
 ```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-## Vue.js preset setup
-* Manually select features
-  * Babel
-  * Router
-  * Vuex
-  * Css pre-processors
-  * Linter / Formatter
-* use history mode for router? Y
-* SCSS/SASS
-* ESLint with error prevention only
-* Lint on save
-* In dedication config files
