@@ -29,6 +29,7 @@
 
 ## Todo
 - [ ] composition api 의 ```<script setup>``` 버전으로 새 브랜치에 작업해보기
+- [ ] 오늘 탭 클릭 시 해당 시간에 맞는 태스크로 스크롤 이동한다.
 
 ## Project setup
 ```
