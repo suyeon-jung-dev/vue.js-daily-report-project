@@ -27,6 +27,9 @@
   * 소개 about
   * 서비스 소개를 보여준다
 
+## Todo
+- [ ] composition api 의 ```<script setup>``` 버전으로 새 브랜치에 작업해보기
+
 ## xeicon 대신 font-awesome 라이브러리 추가
 공식문서: https://fontawesome.com/docs/web/use-with/vue/#you-re-ready-to-add-icons
 1. add SVG Core
