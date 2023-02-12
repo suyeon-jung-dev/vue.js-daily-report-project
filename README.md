@@ -46,6 +46,11 @@ yarn serve
 yarn build
 ```
 
+### Deploy for production
+```
+firebase deploy
+```
+
 ### Lints and fixes files
 ```
 yarn lint
