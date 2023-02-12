@@ -15,7 +15,14 @@
         </div>
 
         <div class="action">
-          <input type="text" v-model="item.action" @keyup.enter="updateItem(item)" placeholder="한 일을 작성해주세요">
+          <p
+              v-if="!item.open"
+              @click="toggleOpen(item)"
+          >
+            {{item.action}}
+            <span v-if="item.action.length===0">내용을 작성해주세요.</span>
+          </p>
+          <input v-if="item.open" type="text" v-model="item.action" @keyup.enter="updateItem(item)" placeholder="한 일을 작성해주세요">
         </div>
 
         <!-- 스코어 컴포넌트 -->
@@ -24,12 +31,13 @@
           :item="item"
         ></day-score>
 
-        <div class="note">
+        <div class="note" v-if="item.open">
           <textarea v-model="item.note" placeholder="노트를 작성해주세요"></textarea>
         </div>
 
-        <div class="buttons">
+        <div class="buttons" v-if="item.open">
           <button class="save" @click="updateItem(item)">저장</button>
+          <button class="cancel" @click="toggleOpen(item)">취소</button>
         </div>
       </li>
     </ul>
@@ -99,6 +107,9 @@ export default {
         console.log('update', res);
         this.getItems();  // 저장이 성공하면 get api 다시 호출하여 저장 된 값이 반영되었는지 바로 확인 가능하다.
       });
+    },
+    toggleOpen(item) {
+      item.open = !item.open;
     }
   },
   computed: {},
