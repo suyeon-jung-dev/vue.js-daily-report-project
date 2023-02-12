@@ -20,7 +20,7 @@ export default {
   methods: {},
   computed: {
     todayUrl() {
-      let todayUrl = moment(new Date()).format('YYYY–MM-DD');
+      let todayUrl = moment(new Date()).format('YYYY-MM-DD');
       return `/day/${todayUrl}`;  // templaet literal 은 백틱으로 감싼다.
     }
   },
