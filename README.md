@@ -30,6 +30,8 @@
 ## Todo
 - [ ] composition api 의 ```<script setup>``` 버전으로 새 브랜치에 작업해보기
 - [ ] 오늘 탭 클릭 시 해당 시간에 맞는 태스크로 스크롤 이동한다.
+- [ ] isWrited 컬럼 추가해서 작성한 값이 있는지 여부 체크해서 작성한 값이 없는 슬롯은 css 로 회색처리 한다. <br>
+그럼 작성중인 슬롯도 알아야 하니 focused 처리도 해주어야 할 듯
 
 ## Project setup
 ```
@@ -75,6 +77,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## 추가 모듈
 - xeicon
 - moment
+- axios (ajax for calling api endpoints)
 
 
 ## xeicon 대신 font-awesome 라이브러리 추가
@@ -144,4 +147,9 @@ https://fontawesome.com/docs/web/use-with/vue/add-icons#call-the-icons
 ## 오늘 날짜를 가져오기 위한 날짜 패키지, moment 설치
 ```
 yarn add moment
+```
+
+## axios (ajax for calling api endpoints)
+```
+yarn add axios
 ```
