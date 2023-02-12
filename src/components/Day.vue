@@ -9,6 +9,7 @@
           v-for="item in items"
           :key="item.id"
           class="day-list-item"
+          :class="{'open': item.open}"
       >
         <div class="time">
           <h2>{{item.id}}</h2>
