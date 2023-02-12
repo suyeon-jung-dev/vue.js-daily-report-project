@@ -17,7 +17,7 @@ export default {
     updateScore(score) {
       console.log(score);
       console.log(this.item);
-      this.$emit('onUpdateScore', this.item, score);
+      this.$emit('onUpdateScore', this.item, score);  // 부모의 method 사용
     }
   },
   computed: {},

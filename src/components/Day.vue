@@ -15,7 +15,7 @@
         </div>
 
         <div class="action">
-          <input type="text" v-model="item.action" placeholder="한 일을 작성해주세요">
+          <input type="text" v-model="item.action" @keyup.enter="updateItem(item)" placeholder="한 일을 작성해주세요">
         </div>
 
         <!-- 스코어 컴포넌트 -->
@@ -46,20 +46,21 @@ export default {
   name: "Day",
   components: {DayScore},
   methods: {
+    // 스코어 버튼 누를 때 호출되는 method
     onUpdateScore(item, score) {
+      // v-model 값 변경
       item.score = score;
       console.log('Day component', score);
+      // 값을 DB에 저장
+      this.updateItem(item);
     },
     // axios 로 firebase database API 로 값을 불러온다.
     getItems() {
       // ajax 요청
       console.log("get items");
-      let url = `https://daily-report-project-sue-default-rtdb.asia-southeast1.firebasedatabase.app/items.json?orderBy="$key"&startAt="${this.$route.params.date}"&endAt="${this.$route.params.date}-2-24"`;
-      console.log(url);
+      let url = `https://daily-report-project-sue-default-rtdb.asia-southeast1.firebasedatabase.app/items.json?orderBy="$key"&startAt="${this.$route.params.date}"&endAt="${this.$route.params.date}-22-24"`;
       axios.get(url).then((res) => {
-        console.log(res);
         this.items = this.displayItems(res.data);
-        console.log(this.items);
       });
     },
     // eslint-disable-next-line
@@ -72,7 +73,6 @@ export default {
       for(let i = 0; i < 12; i++) {
         let datetime = moment(this.$route.params.date + ' ' + startTime);
         let itemKey = `${this.$route.params.date}-${datetime.add(i*2, 'hours').format('HH')}-${datetime.add(2, 'hours').format('HH')}`;
-        console.log(itemKey);
         let item = {
           id: itemKey,
           action: '',
@@ -80,7 +80,6 @@ export default {
           open: false,
           score: undefined
         }
-        console.log(item);
         // todo - isWrited 컬럼 추가해서 작성한 값이 있는지 여부 체크해서 작성한 값이 없는 슬롯은 css 로 회색처리 한다. 그럼 작성중인 슬롯도 알아야 하니 focused 처리도 해주어야 할 듯
 
         // 2. api 로 전달받은 data 값에 대해 key 를 기준으로 돌면서 data 순회
@@ -94,11 +93,10 @@ export default {
     return items;
     },
     updateItem(item) {
-      console.log('update', item);
       let url = `https://daily-report-project-sue-default-rtdb.asia-southeast1.firebasedatabase.app/items/${item.id}.json`;
       // axios.put(url, body 에 담길 객체).then(function() => {});
       axios.put(url, item).then((res) => {
-        console.log(res);
+        console.log('update', res);
         this.getItems();  // 저장이 성공하면 get api 다시 호출하여 저장 된 값이 반영되었는지 바로 확인 가능하다.
       });
     }
