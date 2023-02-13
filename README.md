@@ -78,6 +78,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - xeicon
 - moment
 - axios (ajax for calling api endpoints)
+- vue-full-calendar (for Vue3)
 
 
 ## xeicon 대신 font-awesome 라이브러리 추가
@@ -152,4 +153,14 @@ yarn add moment
 ## axios (ajax for calling api endpoints)
 ```
 yarn add axios
+```
+
+## vue-full-calendar (for Vue3)
+[공식 documentation](https://fullcalendar.io/docs/vue)
+```
+npm install --save \
+  @fullcalendar/core \
+  @fullcalendar/vue3 \
+  @fullcalendar/daygrid \
+  @fullcalendar/interaction
 ```
